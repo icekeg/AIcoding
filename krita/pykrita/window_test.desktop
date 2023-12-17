@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=window_test
+X-Python-2-Compatible=false
+X-Krita-Manual=manual.html
+Name=window extension test
+Comment=window extension test (window menu test)

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=script_test
+X-Python-2-Compatible=false
+X-Krita-Manual=manual.html
+Name=Script test
+Comment=My script test (script test)

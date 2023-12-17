@@ -1,0 +1,107 @@
+<h1><img width="64px" src="ai_diffusion/icons/logo-128.png"> Generative AI <i>for Krita</i></h1>
+
+<p><a href="#features">Features</a> | <a href="https://github.com/Acly/krita-ai-diffusion/releases/latest">Download</a> | <a href="#installation">Installation</a> | <a href="https://youtu.be/Ly6USRwTHe0">Video</a> | <a href="#screenshots">Screenshots</a></p>
+<p>Generate images from within Krita with minimal fuss: Select an area, push a button,
+and new content that matches your image will be generated. Or expand your canvas and
+fill new areas with generated content that blends right in. Text prompts are optional.
+No tweaking required!</p>
+<p>This plugin seeks to provide what "Generative Fill/Expand" do in Photoshop - and go beyond.
+Adjust strength to refine existing content <em>(img2img)</em> or generate images from scratch.
+Powerful customization is available for advanced users.</p>
+<p><em>Local. Open source. Free.</em></p>
+<p><a href="https://youtu.be/Ly6USRwTHe0" title="Watch video demo"><img alt="Watch video demo" src="media/screenshot-video-preview.webp" /></a></p>
+<h2><a name="features"></a> Features</h2>
+<p>Features are designed to fit an interactive workflow where AI generation is used as just another
+tool while painting. They are meant to synergize with traditional tools and the layer stack.</p>
+<ul>
+<li><strong>Inpaint</strong>: Use Krita's selection tools to mark an area and remove or replace existing content in the image. Simple text prompts can be used to steer generation.</li>
+<li><strong>Outpaint</strong>: Extend your canvas, select a blank area and automatically fill it with content that seamlessly blends into the existing image.</li>
+<li><strong>Generate</strong>: Create new images from scratch by decribing them with words or existing images. Supports SD1.5 and SDXL.</li>
+<li><strong>Refine</strong>: Use the strength slider to refine existing image content instead of replacing it entirely. This also works great for adding new things to an image by painting a (crude) approximation and refining at high strength!</li>
+<li><strong>Live Painting</strong>: Let AI interpret your canvas in real time for immediate feedback. <a href="https://youtu.be/AF2VyqSApjA?si=Ve5uQJWcNOATtABU">Watch Video</a></li>
+<li><strong>Control</strong>: Guide image creation directly with sketches or line art. Use depth or normal maps from existing images or 3D scenes. Transfer character pose from snapshots. Control composition with segmentation maps.</li>
+<li><strong>Resolutions</strong>: Work efficiently at any resolution. The plugin will automatically use resolutions appropriate for the AI model, and scale them to fit your image region.</li>
+<li><strong>Upscaling</strong>: Upscale and enrich images to 4k, 8k and beyond without running out of memory.</li>
+<li><strong>Job Queue</strong>: Depending on hardware, image generation can take some time. The plugin allows you to queue and cancel jobs while working on your image.</li>
+<li><strong>History</strong>: Not every image will turn out a masterpiece. Preview results and browse previous generations and prompts at any time.</li>
+<li><strong>Strong Defaults</strong>: Versatile default style presets allow for a simple UI which covers many scenarios.</li>
+<li><strong>Customization</strong>: Create your own presets - select a Stable Diffusion checkpoint, add LoRA, tweak samplers and more.</li>
+</ul>
+<h2><a name="installation"></a> Getting Started</h2>
+<p>The plugin comes with an integrated installer for the Stable Diffusion backend.</p>
+<h3>Requirements</h3>
+<ul>
+<li>Windows, Linux, MacOS</li>
+<li><em>On Linux/Mac:</em> Python + venv must be installed<ul>
+<li>version 3.9 or newer</li>
+<li>usually available via package manager, eg. <code>apt install python3-venv</code></li>
+</ul>
+</li>
+</ul>
+<h4>Hardware support</h4>
+<p>To run locally a powerful graphics card with at least 6 GB VRAM is recommended. Otherwise generating images will take very long!</p>
+<table>
+<tr><td>NVIDIA GPU</td><td>supported via CUDA</td></tr>
+<tr><td>AMD GPU</td><td>supported via DirectML on Windows, ROCm on Linux (only custom server)</td></tr>
+<tr><td>Apple M1/M2</td><td>supported via MPS on macOS</td></tr>
+<tr><td>CPU</td><td>supported, but very slow</td></tr>
+<tr><td>Cloud GPU</td><td>supported, rent a GPU on an hourly basis, see <a href="#gpu-cloud">below</a></td></tr>
+</table>
+
+<h3>Installation</h3>
+<ol>
+<li>If you haven't yet, go and install <a href="https://krita.org/">Krita</a>! <em>Required version: 5.2.0 or newer</em></li>
+<li><a href="https://github.com/Acly/krita-ai-diffusion/releases/latest">Download the plugin</a>. Unpack the archive into your <code>pykrita</code> folder.<ul>
+<li><em>Windows:</em> Usually <code>C:\Users\&lt;user&gt;\AppData\Roaming\krita\pykrita</code></li>
+<li><em>Linux:</em> Usually <code>~/.local/share/krita/pykrita</code></li>
+<li><em>MacOS:</em> Usually <code>~/Library/Application Support/krita/pykrita</code></li>
+<li>Check <a href="https://docs.krita.org/en/user_manual/python_scripting/install_custom_python_plugin.html">Krita's official documentation</a> if you have trouble locating it.</li>
+</ul>
+</li>
+<li>Enable the plugin in Krita (Settings ‣ Configure Krita ‣ Python Plugins Manager) and restart.</li>
+<li>Create a new document or open an existing image.</li>
+<li>To show the plugin docker: Settings ‣ Dockers ‣ AI Image Generation.</li>
+<li>In the plugin docker, click "Configure" to start server installation. <em>Requires 10+ GB free disk space.</em></li>
+</ol>
+<h3>Update</h3>
+<p>To upgrade a previous version of the plugin, download and extract the same way as when installing initially. Overwrite/replace existing files when prompted.</p>
+<h3><em>Optional:</em> Custom ComfyUI Server</h3>
+<p>The plugin uses <a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a> as backend. As an alternative to the automatic installation,
+you can install it manually or use an existing installation. If the server is already running locally before starting Krita, the plugin will
+automatically try to connect. Using a remote server is also possible this way.</p>
+<p>Please check the list of <a href="doc/comfy-requirements.md">required extensions and models</a> to make sure your installation is compatible.</p>
+<h3><em>Optional:</em> Object selection tools (Segmentation)</h3>
+<p>If you're looking for a way to easily select objects in the image, there is a <a href="https://github.com/Acly/krita-ai-tools">separate plugin</a> which adds AI segmentation tools.</p>
+<h3>GPU Cloud</h3>
+<p>You can also rent a GPU instead of running locally. In that case, step 5 is not needed. Instead use the plugin to connect to a remote server.</p>
+<p>There is a <a href="https://github.com/Acly/krita-ai-diffusion/blob/main/doc/cloud-gpu.md">step by step guide</a> on how to setup cloud GPU on <a href="https://www.runpod.io">runpod.io</a> or <a href="https://vast.ai">vast.ai</a>.</p>
+<h3>Common Issues</h3>
+<h4>Plugin is grayed out in Python Plugins Manager</h4>
+<p>You can hover over the grayed out plugin name to get the error message in a tooltip. The most common reason is that a source package was used for installation (eg using GitHub's Code ‣ Download ZIP). It is automatically generated by GitHub and does not contain everything. Please try with a <a href="https://github.com/Acly/krita-ai-diffusion/releases">release package</a>.</p>
+<h4>Log files</h4>
+<p>If you encounter an issue, it can help to check the log files. They are in the <code>.logs</code> folder inside the plugin installation folder. You can also locate the folder with the "View log files" link in the plugin's connection settings. Please attach logs when you open an Issue on GitHub!</p>
+<h2><a name="screenshots"></a> Screenshots</h2>
+<p><em>Inpainting on a photo using a realistic model</em>
+<img src="media/screenshot-2.png"></p>
+<p><em>Reworking and adding content to an AI generated image</em>
+<img src="media/screenshot-1.png"></p>
+<p><em>Adding detail and iteratively refining small parts of the image</em>
+<img src="media/screenshot-3.png"></p>
+<p><em>Using ControlNet to guide image generation with a crude scribble</em>
+<img src="media/screenshot-4.png"></p>
+<p><em>Modifying the pose vector layer to control character stances (Click for video)</em>
+<a href="https://youtu.be/-QDPEcVmdLI" title="Watch video demo"><img alt="Watch video demo" src="media/screenshot-5.png" /></a></p>
+<p><em>Upscaling to improve image quality and add details</em>
+<img src="media/screenshot-6.png"></p>
+<p><em>Server installation</em>
+<img src="media/screenshot-installation.png"></p>
+<p><em>Style preset configuration</em>
+<img src="media/screenshot-style.png"></p>
+<h2>Contributing</h2>
+<p>Contributions are very welcome! Check the <a href="CONTRIBUTING.md">contributing guide</a> to get started.</p>
+<h2>Technology</h2>
+<ul>
+<li>Image generation: <a href="https://github.com/Stability-AI/generative-models">Stable Diffusion</a></li>
+<li>Diffusion backend: <a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a></li>
+<li>Inpainting: <a href="https://github.com/lllyasviel/ControlNet">ControlNet</a>, <a href="https://github.com/tencent-ailab/IP-Adapter">IP-Adapter</a></li>
+</ul>
