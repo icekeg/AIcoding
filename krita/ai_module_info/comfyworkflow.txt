@@ -1,0 +1,7 @@
+这段Python代码主要实现了一个名为ComfyWorkflow的类，该类用于构建可以发送给ComfyUI提示API的工作流。以下是代码的主要组成部分：
+
+定义了Output类，表示工作流中的输出节点。
+定义了Output2和Output3类型别名，表示包含两个或三个Output的元组。
+定义了ComfyWorkflow类，用于构建工作流。它包含了一些属性，如节点计数、样本计数等。提供了一些方法，如add()（添加节点）、add_cached()（添加缓存节点）、ksampler()（添加采样器节点）等。同时，它还提供了一些辅助方法，如load_checkpoint()（加载检查点）、load_vae()（加载VAE）等。
+使用overload装饰器为add()和add_cached()方法提供了多个函数签名，以支持不同数量的输出参数。
+总的来说，这段代码主要实现了一个名为ComfyWorkflow的类，该类用于构建可以发送给ComfyUI提示API的工作流。这些类可以用于管理和操作与工作流相关的节点和输出。

@@ -1,0 +1,15 @@
+这段Python代码的主要目的是在PyQt5应用程序中使用异步I/O编程(asyncio)。PyQt5是一个用于创建桌面应用程序的库，而asyncio是一个用于异步I/O编程的库。这段代码通过将asyncio事件循环与PyQt5的定时器QTimer结合，实现了在PyQt5应用程序中处理异步任务。
+
+导入所需的库：asyncio和PyQt5.QtCore。
+
+创建一个新的asyncio事件循环_loop，并创建一个QTimer对象_timer。
+
+定义process_python_events()函数，该函数会在定时器触发时被调用。函数内部，使用_loop.call_soon()方法将_loop.stop()方法添加到事件循环中。然后，使用_loop.run_forever()启动事件循环。
+
+定义setup()函数，用于设置定时器。首先，检查_timer是否已经初始化。然后，使用_timer.setInterval(20)设置定时器触发间隔为20毫秒。接着，将process_python_events函数连接到定时器的timeout信号上。最后，使用_timer.start()启动定时器。
+
+定义run(future)函数，用于在事件循环中运行一个协程。函数接收一个协程对象future作为参数。在函数内部，首先检查事件循环是否正在运行。如果事件循环未运行，则将schedule()函数添加到事件循环中，并启动事件循环。如果事件循环已经在运行，则直接将future添加到事件循环中。最后，返回任务对象task。
+
+定义stop()函数，用于停止定时器和事件循环。首先，使用_timer.stop()停止定时器。然后，将_timer和_loop设置为None，并使用_loop.stop()和_loop.close()停止和关闭事件循环。
+
+这段代码用于在PyQt5应用程序中实现异步任务的调度和执行。在实际使用中，您需要将此代码与PyQt5的主窗口和其他UI组件结合使用。

@@ -1,0 +1,15 @@
+这段 Python 代码定义了一些类、枚举和变量，主要用于描述一个名为 "ComfyUI" 的服务所需的资源。这些资源包括机器学习模型、自定义节点和其他相关文件。代码中定义了以下内容：
+
+导入了一些模块，如 enum, pathlib, typing 等，以便后续使用。
+定义了版本号 version，以及服务的 URL comfy_url 和版本 comfy_version。
+定义了一个名为 CustomNode 的命名元组，用于描述自定义节点的属性，如名称、文件夹、URL、版本和节点列表。
+定义了一个名为 required_custom_nodes 的列表，其中包含了一些必需的自定义节点。
+定义了一个名为 SDVersion 的枚举类，用于表示不同的版本。
+定义了一个名为 ResourceKind 的枚举类，用于表示资源的类型。
+定义了一个名为 ModelResource 的命名元组，用于描述模型资源的属性，如名称、种类、版本、文件夹、文件名和 URL。
+定义了一些列表，如 required_models（必需的模型资源）、default_checkpoints（默认的检查点资源）、upscale_models（上采样模型资源）和 optional_models（可选的模型资源）。
+定义了一个名为 MissingResource 的异常类，用于表示缺少资源的异常。
+定义了一个名为 UpscalerName 的枚举类，用于表示上采样器名称。
+定义了一个名为 ControlMode 的枚举类，用于表示控制模式。
+定义了一些字典，如 _control_text 和 _control_filename，用于在不同控制模式下查找文本和文件名。
+整体来看，这段代码主要用于描述和管理 "ComfyUI" 服务所需的资源，包括模型、自定义节点和其他相关文件。这些资源可能会在服务的安装、运行和升级过程中被使用。

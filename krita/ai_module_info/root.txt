@@ -1,0 +1,23 @@
+这段Python代码定义了一个名为Root的类，该类继承自QObject。Root类是一个管理其他实例（如服务器、连接和模型）的根对象。它还跟踪在Krita中打开的文档，并为每个文档创建一个相应的Model。以下是代码中主要部分的解释：
+
+from __future__ import annotations：这使得类型注解在Python 3.7及更早版本中可用。它允许在类型注解中使用类本身作为类型，而不会导致循环引用错误。
+
+from typing import Callable：从typing模块导入Callable类型，用于类型注解。
+
+from PyQt5.QtCore import QObject, pyqtSignal：从PyQt5.QtCore模块导入QObject和pyqtSignal。QObject是Qt对象模型的基类，pyqtSignal用于创建自定义信号。
+
+类Root的定义及其属性：
+
+_server: Server：一个Server对象的实例，用于管理服务器。
+_connection: Connection：一个Connection对象的实例，用于管理与服务器的连接。
+_models: list[Model]：一个包含Model对象的列表，代表Krita中打开的文档。
+类Root的方法：
+
+__init__：构造函数，初始化Root对象。
+init：初始化Root对象的属性，包括服务器、连接和模型列表。还将_handle_message方法连接到连接的message_received信号。
+model_for_active_document：返回活动文档的Model对象。如果不存在，则创建一个新的Model。
+connection、server和active_model：这些属性方法分别返回_connection、_server和active_model属性。
+autostart：异步方法，用于在启动时自动连接到服务器。
+_find_model：根据job_id查找相应的Model对象。
+_handle_message：处理从客户端接收到的消息，并将其传递给相应的Model对象。
+root = Root()：创建一个Root类的实例，用于在其他地方引用和使用。

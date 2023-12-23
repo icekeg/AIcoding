@@ -1,0 +1,8 @@
+这段Python代码主要实现了一个表示任务状态的枚举类JobState，一个表示任务类型的枚举类JobKind，一个表示任务的类Job，以及一个表示任务队列的类JobQueue。以下是代码的主要组成部分：
+
+导入了一些内置库，如collections，datetime，enum等。
+定义了JobState枚举类，表示任务状态，包括queued（排队）、executing（执行中）、finished（已完成）和cancelled（已取消）。
+定义了JobKind枚举类，表示任务类型，包括diffusion（扩散）、control_layer（控制层）、upscaling（放大）和live_preview（实时预览）。
+定义了Job类，表示一个任务。它包含了一些属性，如任务ID、任务类型、任务状态、提示、边界等。提供了一个属性results，用于访问任务的结果。
+定义了JobQueue类，继承自QObject，用于管理一个文档的等待、进行中和已完成的任务队列。它包含了一个任务队列和一个选择项。提供了一些方法，如添加任务、删除任务、查找任务、设置任务结果、通知任务开始、通知任务完成等。同时，它还提供了一些属性，如selection（表示选择的任务）和memory_usage（表示内存使用情况）。
+总的来说，这段代码主要实现了一个表示任务状态的枚举类JobState，一个表示任务类型的枚举类JobKind，一个表示任务的类Job，以及一个表示任务队列的类JobQueue。这些类可以用于管理和操作与任务相关的状态、类型和队列。

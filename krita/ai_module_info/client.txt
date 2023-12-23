@@ -1,0 +1,8 @@
+这段Python代码定义了一个名为Client的类，该类是一个HTTP/WebSocket客户端，用于向ComfyUI服务器发送请求和监听消息。代码中还定义了一些其他的类和函数，用于处理和管理与服务器的通话和工作流。
+
+from __future__ import annotations用于在Python 3.7及以下版本中启用Python 3.10的新特性，即在定义类型注解时允许后向引用。
+导入了一些内置库，如asyncio，enum，collections，json，struct，uuid，typing等。
+导入了一些自定义的模块，如.comfyworkflow，.image，.network，.websockets.src.websockets，.style，.resources，.util等。
+定义了一些类，如ClientEvent，ClientMessage，JobInfo，Progress，DeviceInfo，CheckpointInfo，Client等，这些类用于封装和处理相关的数据和操作。
+定义了一些函数，如parse_url，websocket_url，resolve_sd_version，filter_supported_styles，_find_model，_find_control_model，_find_clip_vision_model，_find_ip_adapter，_find_upscaler，_find_lcm，_ensure_supported_style，_extract_message_png_image，_extract_pose_json，_validate_executed_node等，这些函数用于执行各种操作，如解析URL，过滤支持的样式，找到模型，确保支持的样式等。
+总的来说，这段代码定义了一个客户端，该客户端可以与服务器进行通信，发送请求，监听消息，处理工作流等。

@@ -1,0 +1,7 @@
+这段Python代码主要实现了一个表示连接状态的枚举类ConnectionState，以及一个管理客户端与服务器之间连接的类Connection。以下是代码的主要组成部分：
+
+导入了一些内置库，如enum，asyncio等。
+定义了ConnectionState枚举类，表示连接状态，包括disconnected（断开连接）、connecting（正在连接）、connected（已连接）和error（出错）。
+定义了Connection类，继承自QObject，用于管理客户端与服务器之间的连接。它包含了一些属性，如连接状态、错误信息、缺失的资源等。提供了一些方法，如连接服务器、断开连接、中断、清除队列、刷新等。同时，它还提供了一个异步方法_handle_messages()，用于处理从服务器接收到的消息。
+定义了一个辅助函数apply_performance_preset()，根据设备信息为设置应用性能预设。
+总的来说，这段代码主要实现了一个表示连接状态的枚举类ConnectionState，以及一个管理客户端与服务器之间连接的类Connection。这些类可以用于管理和操作与服务器之间的连接和通信。

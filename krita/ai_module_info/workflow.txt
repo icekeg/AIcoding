@@ -1,0 +1,8 @@
+这段Python代码是一个深度学习图像处理库的部分，包含了一些类定义和函数定义，用于处理图像和进行模型训练。
+
+从__future__导入annotations是为了在Python 3.7及以下版本中启用Python 3.10的新特性，即在定义类型注解时允许后向引用。
+使用了math，re，itertools，pathlib，typing等Python内置库。
+导入了一些自定义的模块，如.image，.client，.style，.resources，.settings，.comfyworkflow，.util等。
+定义了一些类，如ScaledExtent，LiveParams，Control，Conditioning等，用于封装和处理相关的数据。
+定义了一些函数，如compute_bounds，create_inpaint_context，compute_batch_size，prepare，prepare_extent，prepare_image，prepare_masked，_sampler_params，_parse_loras，_apply_strength，load_model_with_lora，merge_prompt，apply_conditioning，apply_control，upscale，generate，inpaint，refine，refine_region，create_control_image，upscale_simple，upscale_tiled等，这些函数用于执行各种图像处理和模型训练的任务。
+总的来说，这段代码的主要目的是为了处理图像，训练模型，生成图像，以及对图像进行一些操作，如缩放，修复，提炼等等。

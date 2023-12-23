@@ -1,0 +1,9 @@
+这段Python代码主要实现了一个HTTP网络请求客户端，用于下载文件和处理网络错误。以下是代码的主要组成部分：
+
+导入了一些内置库，如asyncio，json，os，datetime，pathlib等。
+导入了一些第三方库，如PyQt5.QtCore，PyQt5.QtNetwork等。
+导入了自定义模块中的client_logger作为log。
+定义了一些异常类，如NetworkError，OutOfMemoryError，Interrupted，Disconnected等，用于处理不同类型的网络错误。
+定义了一些类，如Request，RequestManager，DownloadProgress，DownloadHelper等，用于封装和处理相关的数据和操作。
+定义了一些函数，如_try_download，download，_map_host等，用于执行各种操作，如下载文件，处理网络错误等。
+总的来说，这段代码实现了一个用于下载文件和处理网络错误的HTTP网络请求客户端。

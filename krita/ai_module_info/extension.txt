@@ -1,0 +1,16 @@
+这段Python代码是一个使用PyQt5库的Krita扩展。Krita是一个开源的数字绘画和插画软件，这个扩展为Krita提供了一组AI工具。
+
+导入所需的库和模块：首先导入sys库、typing库中的Callable以及PyQt5.QtWidgets中的QAction。接着从Krita库中导入Extension、Krita、DockWidgetFactory、DockWidgetFactoryBase和Window。还导入了一些其他模块，如eventloop、settings、Workspace、actions等。
+
+定义一个名为AIToolsExtension的类，它继承自Extension。这个类包含以下方法：
+
+__init__(self, parent): 初始化方法，设置事件循环、加载设置、初始化根服务器等。还连接了一个槽函数self.shutdown，用于在应用程序关闭时触发。
+setup(self): 设置方法，运行事件循环。
+shutdown(self): 关闭方法，终止根服务器并停止事件循环。
+_create_action(self, window: Window, name: str, func: Callable[[], None]): 创建一个QAction，连接到给定的函数，并将其添加到_actions字典中。这些动作将在Krita中作为菜单项或工具栏按钮出现。
+createActions(self, window): 使用_create_action方法创建一系列动作，如设置、生成、取消、应用等。
+将AIToolsExtension添加到Krita实例中，使其成为Krita的一个扩展。
+
+使用DockWidgetFactory将ImageDiffusionWidget添加到Krita实例中，使其成为一个可停靠的窗口小部件。
+
+总之，这段代码创建了一个Krita扩展，提供了一组AI工具，包括创建一系列动作和一个可停靠的窗口小部件。

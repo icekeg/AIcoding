@@ -1,0 +1,6 @@
+这段Python代码主要实现了一个表示控制层的类ControlLayer，以及一个表示控制层列表的类ControlLayerList。以下是代码的主要组成部分：
+
+导入了一些内置库，如QUuid，Qt等。
+定义了ControlLayer类，继承自QObject，用于表示一个控制层。它包含了一些属性，如模式、图层ID、强度、结束值、是否支持、是否为姿态向量、是否可以生成、是否有活动任务、是否显示结束值和错误文本等。提供了一些方法，如get_image()（获取图像）、generate()（生成控制层）等。同时，它还提供了一些信号，如mode_changed、layer_id_changed、strength_changed、end_changed、is_supported_changed、is_pose_vector_changed、can_generate_changed、has_active_job_changed、show_end_changed和error_text_changed。
+定义了ControlLayerList类，继承自QObject，用于管理一个文档的控制层列表。它包含了一个模型和一个控制层列表。提供了一些方法，如添加控制层、删除控制层等。同时，它还提供了一些信号，如added和removed。
+总的来说，这段代码主要实现了一个表示控制层的类ControlLayer，以及一个表示控制层列表的类ControlLayerList。这些类可以用于管理和操作与控制层相关的属性和列表。
