@@ -1,0 +1,9 @@
+这段 Python 代码定义了一个名为 ServerWidget 的 PyQt5 图形用户界面 (GUI) 组件，用于构建一个用于管理和配置服务器的界面。代码中定义了以下内容：
+
+导入了一些必要的 PyQt5 模块和自定义模块，例如 Qt, QUrl, QDesktopServices 等，以及一些自定义的组件，如 Settings, Server, ModelResource 等。
+定义了一个名为 PackageState 的枚举类型，用于表示软件包的状态（已安装、未安装等）。
+定义了一个名为 PackageItem 的类，用于存储软件包信息，如名称、状态等。
+定义了一个名为 PackageGroupWidget 的类，它继承自 QWidget。这个类用于构建一个显示一组软件包的界面，包括名称、状态等信息。
+定义了一个名为 ServerWidget 的类，它继承自 QWidget。这个类是主要的 GUI 组件，包含了一系列子组件和布局，如服务器位置选择器、状态标签、进度条、后端选择器、启动按钮等。此外，还包含了一些用于管理和配置服务器的方法，如 _change_location, _select_location, _change_backend, _launch, _start, _stop, _install, _upgrade, update, update_required, update_optional 等。
+在 ServerWidget 类中，还定义了一些属性，如 requires_install, selected_workload 等，用于获取和设置服务器的状态和配置。
+整体来看，这段代码主要用于构建一个用于管理和配置服务器的 PyQt5 图形用户界面，包括输入框、按钮等子组件，以及相应的事件处理和数据绑定。用户可以通过这个界面选择服务器位置、更改后端、启动/停止服务器、安装/升级软件包等。

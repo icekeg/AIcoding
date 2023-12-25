@@ -1,0 +1,7 @@
+这段 Python 代码定义了一个名为 GenerationWidget 的 PyQt5 图形用户界面 (GUI) 组件，用于构建一个用于生成图像的界面。代码中定义了以下内容：
+
+导入了一些必要的 PyQt5 模块和自定义模块，例如 Qt, QMetaObject, QSize 等，以及一些自定义的组件，如 WorkspaceSelectWidget, StyleSelectWidget 等。
+定义了一个名为 HistoryWidget 的类，它继承自 QListWidget。这个类用于显示已完成的任务列表，并提供点击和双击事件处理。它还包含一些方法，如 add, update_selection, select_item, rebuild 等，用于管理和操作任务列表。
+定义了一个名为 GenerationWidget 的类，它继承自 QWidget。这个类是主要的 GUI 组件，包含了一系列子组件和布局，如工作区选择器、样式选择器、文本提示框、控制列表、强度滑块、生成按钮、进度条、错误文本、历史列表和应用按钮等。
+在 GenerationWidget 类中，定义了一些属性和方法，如 model, update_progress, update_settings, apply_selected_result 和 apply_result，用于处理界面上的各种操作和事件。
+整体来看，这段代码主要用于构建一个用于生成图像的 PyQt5 图形用户界面，包括任务列表、输入框、按钮等子组件，以及相应的事件处理和数据绑定。用户可以通过这个界面输入提示、选择样式、调整参数等，然后生成和预览图像。

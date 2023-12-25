@@ -1,0 +1,6 @@
+这段 Python 代码定义了一些 PyQt5 图形用户界面（GUI）组件，用于构建一个用于图像生成、放大和实时预览的界面。代码中定义了以下内容：
+
+导入了一些必要的 PyQt5 模块，例如 QAction, QSlider, QWidget, QPlainTextEdit, QLabel, QLineEdit, QMenu, QSpinBox, QDoubleSpinBox, QToolButton, QComboBox, QHBoxLayout, QVBoxLayout, QSizePolicy 等。
+定义了一些自定义的 GUI 组件，如 QueueWidget, ControlWidget, ControlListWidget, ControlLayerButton, StyleSelectWidget, MultiLineTextPromptWidget, SingleLineTextPromptWidget, TextPromptWidget, StrengthWidget, WorkspaceSelectWidget 等。这些组件包含了一些子组件和布局，以及相应的事件处理和数据绑定。
+这些自定义组件可用于构建一个用于图像生成、放大和实时预览的界面。例如，QueueWidget 用于显示和管理任务队列；ControlWidget 和 ControlListWidget 用于管理图像生成的控制层；StyleSelectWidget 用于选择风格；TextPromptWidget 用于输入文本提示；StrengthWidget 用于调整控制强度；WorkspaceSelectWidget 用于在不同的工作区之间切换。
+整体来看，这段代码主要用于构建一个用于图像生成、放大和实时预览的 PyQt5 图形用户界面，包括输入框、滑块、按钮等子组件，以及相应的事件处理和数据绑定。用户可以通过这个界面选择风格、控制层、工作区等参数，并执行图像生成、放大和实时预览操作。
