@@ -1,0 +1,5 @@
+socket简单实现
+https://www.cnblogs.com/lsdb/p/10949766.html
+
+pyqt5 qnetwork示例
+https://blog.csdn.net/wm9028/article/details/102602455
