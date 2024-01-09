@@ -1,0 +1,8 @@
+typing模块中的NamedTuple	用来创建一组类型tuple
+
+
+深入理解协程
+https://ashooter.github.io/2018-11-19/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Python%E7%9A%84asyncio%E5%8D%8F%E7%A8%8B/
+
+asyncio模块中的Future	代表还未完成的结果
+https://python-parallel-programmning-cookbook.readthedocs.io/zh-cn/latest/chapter4/06_Dealing_with_Asyncio_and_Futures.html
