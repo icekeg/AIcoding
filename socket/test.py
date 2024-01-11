@@ -5,5 +5,5 @@ def parse_url(url: str):
         url = f"http://{url}"
     return url
 
-tt = parse_url("/127.0.0.1:8188")
+tt = parse_url("http://127.0.0.1:8188")
 print(tt)
