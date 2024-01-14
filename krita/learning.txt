@@ -3,3 +3,7 @@ https://www.cnblogs.com/lsdb/p/10949766.html
 
 pyqt5 qnetwork示例
 https://blog.csdn.net/wm9028/article/details/102602455
+
+comfy UI api 教程
+https://blog.csdn.net/jjs15259655776/article/details/134388940
+https://gitee.com/BTYY/wailikeji-chatgpt/blob/master/comfyui-api.md
