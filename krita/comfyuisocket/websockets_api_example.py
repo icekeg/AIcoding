@@ -31,27 +31,27 @@ def get_history(prompt_id):
 def get_images(ws, prompt):
     prompt_id = queue_prompt(prompt)['prompt_id']
     output_images = {}
-    # while True:
-    #     out = ws.recv()
-    #     if isinstance(out, str):
-    #         message = json.loads(out)
-    #         if message['type'] == 'executing':
-    #             data = message['data']
-    #             if data['node'] is None and data['prompt_id'] == prompt_id:
-    #                 break #Execution is done
-    #     else:
-    #         continue #previews are binary data
+    while True:
+        out = ws.recv()
+        if isinstance(out, str):
+            message = json.loads(out)
+            if message['type'] == 'executing':
+                data = message['data']
+                if data['node'] is None and data['prompt_id'] == prompt_id:
+                    break #Execution is done
+        else:
+            continue #previews are binary data
 
-    # history = get_history(prompt_id)[prompt_id]
-    # for o in history['outputs']:
-    #     for node_id in history['outputs']:
-    #         node_output = history['outputs'][node_id]
-    #         if 'images' in node_output:
-    #             images_output = []
-    #             for image in node_output['images']:
-    #                 image_data = get_image(image['filename'], image['subfolder'], image['type'])
-    #                 images_output.append(image_data)
-    #         output_images[node_id] = images_output
+    history = get_history(prompt_id)[prompt_id]
+    for o in history['outputs']:
+        for node_id in history['outputs']:
+            node_output = history['outputs'][node_id]
+            if 'images' in node_output:
+                images_output = []
+                for image in node_output['images']:
+                    image_data = get_image(image['filename'], image['subfolder'], image['type'])
+                    images_output.append(image_data)
+            output_images[node_id] = images_output
 
     return output_images
 
