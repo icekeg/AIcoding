@@ -10,6 +10,7 @@
 from PyQt5 import  QtNetwork
 from PyQt5.QtCore import QCoreApplication, QUrl
 import sys
+
             
 class Example:
   

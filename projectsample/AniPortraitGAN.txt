@@ -1,0 +1,30 @@
+python gen_video.py
+
+Options:
+    # General options
+    --ckpt              Path to the checkpoint file. (default: ckpts/sshq512.pt)
+    --config            Config name. (default: SSHQ512_inf)
+    --output_dir        Output directory.
+    --seeds             Random seeds.
+    --psi               Truncation psi. (default: 0.7)
+
+    # Video options
+    --exp_path          Path to the expression keyframes npy file.
+    --pose_path         Path to the pose keyframes npy file.
+    --cam_path          Path to the camera keyframes npy file.
+    --n_interval        Number of interpolation frames between two keyframes.
+    --cam_yaw_range     Range of camera yaw angle when rotating.
+    --cam_cycle         Cycle of camera rotation.
+    --video_length      Length of the generated video.
+    --fps               FPS of the generated video.
+    --ext               Video extension. (default: mp4)
+
+Examples:
+    # Generate videos of 3D portraits with different expressions
+    python gen_video.py --output_dir video --exp_path keyframes/expression.npy --n_interval 30 --fps 30
+
+    # Generate videos of 3D portraits with different head poses
+    python gen_video.py --output_dir video --pose_path keyframes/pose.npy --n_interval 30 --fps 30
+
+    # Generate videos of 3D portraits driven by real videos
+    python gen_video.py --output_dir video --exp_path keyframes/real_video_examples/sample1/expression.npy --pose_path keyframes/real_video_examples/sample1/joint_eulers.npy --cam_path keyframes/real_video_examples/sample1/camera_pose.npy --n_interval 1 --fps 12.5
