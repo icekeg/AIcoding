@@ -1,17 +1,17 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="extension.py&#xa;AIToolsExtension?" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_1090958577" CREATED="1409300609620" MODIFIED="1704259584053" COLOR="#ffffff" CHILD_NODES_LAYOUT="LEFTTORIGHT_BOTTOM_CENTERED">
-<hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
 <font BOLD="false"/>
+<hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
 <hook NAME="MapStyle" background="#002b36" zoom="0.826">
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_note_icons="true" fit_to_viewport="false" associatedTemplateLocation="template:/dark_solarized_template.mm"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_note_icons="true" associatedTemplateLocation="template:/dark_solarized_template.mm" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_1664261437" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#002b36" BACKGROUND_COLOR="#fdf6e3" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="8 pt" SHAPE_VERTICAL_MARGIN="5 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#f0f0f0" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="3 pt">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#fdf6e3" WIDTH="2" TRANSPARENCY="255" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_1664261437" STARTINCLINATION="132.75 pt;-32.25 pt;" ENDINCLINATION="132.75 pt;24 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#fdf6e3" WIDTH="2" TRANSPARENCY="255" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_1664261437" STARTINCLINATION="132.75 pt;-31.5 pt;" ENDINCLINATION="132.75 pt;24 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="11" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="bezier" COLOR="#93a1a1" WIDTH="3" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -89,8 +89,7 @@
       实例初始化时会开启evnetloop.setup()事件循环，settings.load()设置面板数据初始化,root.init()用于连接本地服务或者远程服务，并处理收到的信息
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="ui/diffusion.py&#xa;ImageDiffusionWidget::DockWidget" POSITION="bottom_or_right" ID="ID_1381825538" CREATED="1704201598065" MODIFIED="1704245391013" CHILD_NODES_LAYOUT="LEFTTORIGHT_BOTTOM_CENTERED"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -111,8 +110,7 @@
       </div>
     </div>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="ui/diffusion.py&#xa;WelcomeWidget" ID="ID_494507569" CREATED="1704212598960" MODIFIED="1704212844296"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -123,8 +121,7 @@
       欢迎界面，在未连上comfyUI时的界面
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="ui/generation.py&#xa;GenerationWidget" ID="ID_769704979" CREATED="1704212633351" MODIFIED="1704212864557"><richcontent TYPE="NOTE">
 <html>
@@ -136,8 +133,20 @@
       普通生成模式界面
     </p>
   </body>
+</html></richcontent>
+<node TEXT="ui/widget.py" ID="ID_1315053202" CREATED="1705495288295" MODIFIED="1705495348120"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      实现了很多插件自己定义的ui控件
+    </p>
+  </body>
 </html>
 </richcontent>
+</node>
 </node>
 <node TEXT="ui/upscale.py&#xa;UpscaleWidget" ID="ID_1895565447" CREATED="1704212674162" MODIFIED="1704212906227"><richcontent TYPE="NOTE">
 <html>
@@ -149,8 +158,7 @@
       放大模式界面
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="ui/live.py&#xa;LiveWidget" ID="ID_1359856200" CREATED="1704212726806" MODIFIED="1704212923640"><richcontent TYPE="NOTE">
 <html>
@@ -162,8 +170,7 @@
       利用lcm实时绘制界面
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node TEXT="ui/settings.py&#xa;SettingsDialog::QDialog" POSITION="top_or_left" ID="ID_1172246944" CREATED="1704213682241" MODIFIED="1704252098298"><richcontent TYPE="NOTE">
@@ -176,8 +183,7 @@
       设置界面的ui界面实现，实际内容直接调用settings.py中的Settings类的数据
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="settings.py&#xa;Settings::QObject" POSITION="top_or_left" ID="ID_1287516486" CREATED="1704250823826" MODIFIED="1704252024789"><richcontent TYPE="NOTE">
 <html>
@@ -189,8 +195,7 @@
       QObect的子类Settings存储设置界面里面的具体数据给实际界面类ui/settomgs.py调用
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="root.py&#xa;Root::QObject" POSITION="top_or_left" ID="ID_888890375" CREATED="1704259626582" MODIFIED="1704268398412"><richcontent TYPE="NOTE">
 <html>
@@ -208,8 +213,7 @@
       autostart函数用来做第一次的网络连接
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="connection.py&#xa;Connection::QObject" ID="ID_877188082" CREATED="1704268900468" MODIFIED="1704269464242"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -220,8 +224,7 @@
       _connect()方法调用client中的connnet()方法来连接服务器
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="client.py&#xa;Clinet" ID="ID_1565119436" CREATED="1704269471514" MODIFIED="1704293326065"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -232,8 +235,7 @@
       Clinet类中的connet()方法中用_get方法调用了network.py中RequestManager类的get方法，间接调用http方法来实现通信
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="network.py&#xa;RequestManager" ID="ID_996963145" CREATED="1704293290223" MODIFIED="1704293561793"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -244,8 +246,7 @@
       RequestManager类中的get方法调用http函数来完成通信
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
