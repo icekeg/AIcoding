@@ -247,18 +247,34 @@ class Example:
              
       
     def handleResponse(self, reply):
-
+        # url = "http://127.0.0.1:8188/"
+        # req = QtNetwork.QNetworkRequest(QUrl(url))
         er = reply.error()
         
         if er == QtNetwork.QNetworkReply.NoError:
     
             bytes_string = reply.readAll()
-            print("everything is ok!!!")
-            #print(str(bytes_string, 'utf-8'))
+            #print("everything is ok!!!")
+            print(str(bytes_string, 'utf-8'))
+            
+            jsondata = json.loads(bytes_string.data().decode('utf-8'))
+            prompt_id = jsondata['prompt_id']
+            print(prompt_id)
             
         else:
             print("Error occured: ", er)
             print(reply.errorString())
+
+        # while True:
+        #     rr = self.nam.get(req)
+        #     if isinstance(rr,str):
+        #         message = json.loads(rr)
+        #         if message['type'] == 'executing':
+        #             data = message['data']
+        #             if data['node'] is None and data['prompt_id'] == prompt_id:
+        #                 break #Execution is done
+        #     else:
+        #         continue
             
         QCoreApplication.quit()    
 
@@ -266,7 +282,7 @@ prompt = json.loads(prompt_text)
 #prompt["6"]["inputs"]["text"] = "masterpiece best quality man"
 
 #set the seed for our KSampler node
-prompt["3"]["inputs"]["seed"] = 7
+prompt["3"]["inputs"]["seed"] = 8
 
 app = QCoreApplication([])
 ex = Example(prompt)
