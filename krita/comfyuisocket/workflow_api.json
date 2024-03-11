@@ -1,0 +1,251 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 793849426877181,
+      "steps": 20,
+      "cfg": 4,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "49",
+        0
+      ],
+      "positive": [
+        "53",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "evening sunset scenery blue sky nature,a portrait of one girl,stand, full body",
+      "clip": [
+        "49",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark,low quality",
+      "clip": [
+        "49",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "33",
+        0
+      ],
+      "vae": [
+        "42",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "33": {
+    "inputs": {
+      "seed": 59968871002298,
+      "steps": 10,
+      "cfg": 1.1,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "42",
+        0
+      ],
+      "positive": [
+        "36",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "34",
+        1
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "34": {
+    "inputs": {
+      "width": 2048,
+      "height": 2048,
+      "compression": 42,
+      "batch_size": 1
+    },
+    "class_type": "StableCascade_EmptyLatentImage",
+    "_meta": {
+      "title": "StableCascade_EmptyLatentImage"
+    }
+  },
+  "36": {
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ],
+      "stage_c": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "StableCascade_StageB_Conditioning",
+    "_meta": {
+      "title": "StableCascade_StageB_Conditioning"
+    }
+  },
+  "42": {
+    "inputs": {
+      "ckpt_name": "cascade/stable_cascade_stage_b.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": "sunset03.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "49": {
+    "inputs": {
+      "ckpt_name": "cascade/stable_cascade_stage_c.safetensors"
+    },
+    "class_type": "unCLIPCheckpointLoader",
+    "_meta": {
+      "title": "unCLIPCheckpointLoader"
+    }
+  },
+  "50": {
+    "inputs": {
+      "clip_vision": [
+        "49",
+        3
+      ],
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "51": {
+    "inputs": {
+      "strength": 1,
+      "noise_augmentation": 0,
+      "conditioning": [
+        "6",
+        0
+      ],
+      "clip_vision_output": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "unCLIPConditioning",
+    "_meta": {
+      "title": "unCLIPConditioning"
+    }
+  },
+  "52": {
+    "inputs": {
+      "image": "bb (1).jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "53": {
+    "inputs": {
+      "strength": 1,
+      "noise_augmentation": 0,
+      "conditioning": [
+        "51",
+        0
+      ],
+      "clip_vision_output": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "unCLIPConditioning",
+    "_meta": {
+      "title": "unCLIPConditioning"
+    }
+  },
+  "54": {
+    "inputs": {
+      "clip_vision": [
+        "49",
+        3
+      ],
+      "image": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  }
+}

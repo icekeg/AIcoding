@@ -149,7 +149,7 @@ prompt = json.loads(prompt_text)
 prompt["6"]["inputs"]["text"] = "masterpiece best quality man"
 
 #set the seed for our KSampler node
-prompt["3"]["inputs"]["seed"] = 7
+prompt["3"]["inputs"]["seed"] = 8
 
 ws = websocket.WebSocket()
 ws.connect("ws://{}/ws?clientId={}".format(server_address, client_id))
@@ -157,10 +157,11 @@ images = get_images(ws, prompt)
 
 #Commented out code to display the output images:
 
-# for node_id in images:
-#     for image_data in images[node_id]:
-#         from PIL import Image
-#         import io
-#         image = Image.open(io.BytesIO(image_data))
-#         image.show()
+for node_id in images:
+    for image_data in images[node_id]:
+        from PIL import Image
+        import io
+        image = Image.open(io.BytesIO(image_data))
+        #image.show()
+        image.save("D:/AI/comfytest/8.png")
 

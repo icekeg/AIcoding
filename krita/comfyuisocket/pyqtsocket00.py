@@ -253,8 +253,8 @@ class Example:
         if er == QtNetwork.QNetworkReply.NoError:
     
             bytes_string = reply.readAll()
-            print("ooo")
-            print(str(bytes_string, 'utf-8'))
+            print("everything is ok!!!")
+            #print(str(bytes_string, 'utf-8'))
             
         else:
             print("Error occured: ", er)
@@ -262,11 +262,11 @@ class Example:
             
         QCoreApplication.quit()    
 
-prompt = json.loads(prompt_text2)
+prompt = json.loads(prompt_text)
 #prompt["6"]["inputs"]["text"] = "masterpiece best quality man"
 
 #set the seed for our KSampler node
-#prompt["3"]["inputs"]["seed"] = 5
+prompt["3"]["inputs"]["seed"] = 7
 
 app = QCoreApplication([])
 ex = Example(prompt)
